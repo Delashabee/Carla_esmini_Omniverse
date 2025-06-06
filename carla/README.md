@@ -1,4 +1,4 @@
-## 🤝 Integrating esmini and CARLA (Conceptual Guide)
+## Integrating esmini and CARLA (Conceptual Guide)
 
 Although esmini and CARLA are standalone simulators, combining their strengths is possible through a hybrid workflow.
 

@@ -1,4 +1,4 @@
-#### 🛣️ Creating OpenDRIVE (.xodr) Files
+#### Creating OpenDRIVE (.xodr) Files
 
 OpenDRIVE defines the road network. You can create `.xodr` files using the following methods:
 
@@ -17,7 +17,7 @@ OpenDRIVE defines the road network. You can create `.xodr` files using the follo
      ./esmini path/to/your_scenario.xosc
      ```
 
-#### 🎬 Creating OpenSCENARIO (.xosc) Files
+#### Creating OpenSCENARIO (.xosc) Files
 
 OpenSCENARIO defines how vehicles behave. You can create `.xosc` files by:
 

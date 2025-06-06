@@ -11,6 +11,7 @@ This document summarizes the learning process, pitfalls, and future plans for in
 - Explored and successfully ran example scenarios such as:
   - `basic_cut_in.xosc`: Demonstrates a cut-in maneuver using OpenSCENARIO
   - `esmini_gui`: Observed how ego vehicle follows a predefined path
+  - more info can be found in esmini/README.md
 
 ### ✅ CARLA Python API
 
@@ -65,4 +66,4 @@ This document summarizes the learning process, pitfalls, and future plans for in
 
 ---
 
-📝 More technical notes can be found in `docs/overview.md`.
+

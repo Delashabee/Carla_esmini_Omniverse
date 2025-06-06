@@ -1,19 +1,19 @@
-# Learning & Integration Notes 🧠
+# Learning & Integration Notes
 
 This document summarizes the learning process, pitfalls, and future plans for integrating CARLA, esmini, and Omniverse.
 
 ---
 
-## 🗺️ Learning Roadmap
+## Learning Roadmap
 
-### ✅ esmini
+### esmini
 
 - Explored and successfully ran example scenarios such as:
   - `basic_cut_in.xosc`: Demonstrates a cut-in maneuver using OpenSCENARIO
   - `esmini_gui`: Observed how ego vehicle follows a predefined path
   - more info can be found in esmini/README.md
 
-### ✅ CARLA Python API
+### CARLA Python API
 
 - Learned how to:
   - Spawn and control vehicles
@@ -24,7 +24,7 @@ This document summarizes the learning process, pitfalls, and future plans for in
 
 ---
 
-## 🧱 Pitfalls & Debug Notes
+## Pitfalls & Debug Notes
 
 ### esmini Installation
 
@@ -39,12 +39,12 @@ This document summarizes the learning process, pitfalls, and future plans for in
 
 ---
 
-## 🔗 CARLA + Omniverse Interface Plans
+## CARLA + Omniverse Interface Plans
 
 ### Tools Explored
 
-- ✅ USD Composer (Omniverse) for manual scene loading
-- ✅ Omniverse Kit SDK (planned) for scripting and live editing
+- USD Composer (Omniverse) for manual scene loading
+- Omniverse Kit SDK (planned) for scripting and live editing
 
 ### File Formats
 
@@ -58,7 +58,7 @@ This document summarizes the learning process, pitfalls, and future plans for in
 
 ---
 
-## 🛠️ Future Plans (TODO)
+## 🛠Future Plans (TODO)
 
 - [ ] Export and visualize CARLA sensor data (camera, lidar) as `.usd` assets
 - [ ] Use esmini scenarios to influence CARLA ego behavior

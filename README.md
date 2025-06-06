@@ -58,7 +58,7 @@ This document summarizes the learning process, pitfalls, and future plans for in
 
 ---
 
-## 🛠Future Plans (TODO)
+## Future Plans (TODO)
 
 - [ ] Export and visualize CARLA sensor data (camera, lidar) as `.usd` assets
 - [ ] Use esmini scenarios to influence CARLA ego behavior

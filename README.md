@@ -20,6 +20,7 @@ This document summarizes the learning process, pitfalls, and future plans for in
   - Attach camera and Lidar sensors
   - Retrieve sensor data (image, point cloud)
   - Export ego vehicle trajectory
+  - more infor can be found in carla/README.md
 
 ---
 

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSCENARIO>
+  <FileHeader revMajor="1" revMinor="0"
+              date="2025-07-10"
+              description="CARLA: Drive 10 m then stop"
+              author="generated"/>
+  <ParameterDeclarations/>
+  <CatalogLocations/>
+  <RoadNetwork>
+    <LogicFile filepath="Town10HD"/>
+    <SceneGraphFile filepath=""/>
+  </RoadNetwork>
+  <Entities>
+    <ScenarioObject name="hero">
+      <Vehicle name="vehicle.lincoln.mkz_2017" vehicleCategory="car">
+        <ParameterDeclarations/>
+        <Performance maxSpeed="50" maxAcceleration="5" maxDeceleration="5"/>
+        <BoundingBox>
+          <Center x="1.5" y="0.0" z="0.9"/>
+          <Dimensions width="2.1" length="4.5" height="1.8"/>
+        </BoundingBox>
+        <Axles>
+          <FrontAxle maxSteering="0.5" wheelDiameter="0.6" trackWidth="1.8" positionX="3.1" positionZ="0.3"/>
+          <RearAxle  maxSteering="0.0" wheelDiameter="0.6" trackWidth="1.8" positionX="0.0" positionZ="0.3"/>
+        </Axles>
+        <Properties>
+          <Property name="type" value="ego_vehicle"/>
+        </Properties>
+      </Vehicle>
+    </ScenarioObject>
+  </Entities>
+
+  <Storyboard>
+    <Init>
+      <Actions>
+
+        <Private entityRef="hero">
+          <PrivateAction>
+           <ActivateControllerAction lateral="false" longitudinal="false"/>
+          </PrivateAction>
+
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <WorldPosition x="150.5" y="150.7" z="0.5" h="90.0"/>
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+        </Private>
+      </Actions>
+    </Init>
+
+    <Story name="DriveThenStop">
+      <Act name="DriveAct">
+        <ManeuverGroup name="DriveGroup" maximumExecutionCount="1">
+          <Actors selectTriggeringEntities="false">
+            <EntityRef entityRef="hero"/>
+          </Actors>
+
+          <!-- 1) Start driving at 5 m/s immediately -->
+          <Maneuver name="StartDriving">
+            <Event name="Go" priority="overwrite">
+              <Action name="SetSpeed">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsShape="step" value="1" dynamicsDimension="time"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="5.0"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="DriveNow" delay="0" conditionEdge="none">
+                    <ByValueCondition>
+                      <SimulationTimeCondition value="0" rule="greaterThan"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+          </Maneuver>
+
+          <!-- 2) After traveling 100 m, stop -->
+          <Maneuver name="StopAfter10m">
+            <Event name="Stop" priority="overwrite">
+              <Action name="BrakeToStop">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsShape="step" value="100" dynamicsDimension="distance"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="0.0"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition name="Reached10m" delay="0" conditionEdge="rising">
+                    <ByEntityCondition>
+                      <TriggeringEntities triggeringEntitiesRule="any">
+                        <EntityRef entityRef="hero"/>
+                      </TriggeringEntities>
+                      <EntityCondition>
+                        <TraveledDistanceCondition value="10.0"/>
+                      </EntityCondition>
+                    </ByEntityCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+          </Maneuver>
+
+        </ManeuverGroup>
+
+        <!-- End this Act when the stop event completes -->
+         
+        <StartTrigger>
+        </StartTrigger>        
+        <StopTrigger>
+          <ConditionGroup>
+            <Condition name="EndAfterStop" delay="1" conditionEdge="rising">
+              <ByValueCondition>
+                <StoryboardElementStateCondition storyboardElementType="event"
+                                                 storyboardElementRef="Stop"
+                                                 state="completeState"/>
+              </ByValueCondition>
+            </Condition>
+          </ConditionGroup>
+        </StopTrigger>
+
+      </Act>
+    </Story>
+    <StopTrigger>
+    </StopTrigger>  
+
+  </Storyboard>
+</OpenSCENARIO>

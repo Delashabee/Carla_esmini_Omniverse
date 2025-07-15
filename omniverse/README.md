@@ -21,3 +21,6 @@ Use Omniverse Cloud’s rendering engine (e.g., RTX ray tracing) to generate hig
 
 4.Inject custom sensor models into the simulation via Cloud API
 Use NVIDIA Omniverse Cloud APIs to dynamically load your own sensor models (e.g., customized radar, ultrasonic sensors, camera parameters) into the simulation environment for further training and algorithm testing.
+
+
+current stats : working on omniverse kit-sdk to import object into omniverse

@@ -1,0 +1,7 @@
+https://blogs.nvidia.com/blog/omniverse-cloud-apis/
+https://www.nvidia.com/en-us/on-demand/session/gtc24-s62468/
+https://www.nvidia.com/en-us/use-cases/autonomous-vehicle-simulation/
+https://carla.org/2025/06/11/release-0.9.16-pre/
+https://developer.nvidia.com/blog/develop-custom-physical-ai-foundation-models-with-nvidia-cosmos-predict-2/
+https://docs.isaacsim.omniverse.nvidia.com/latest/installation/quick-install.html
+issacsim installation
